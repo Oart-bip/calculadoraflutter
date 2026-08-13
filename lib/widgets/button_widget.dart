@@ -18,19 +18,25 @@ class ButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: EdgeInsets.all(6),
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: color ?? Colors.grey[300],
-            foregroundColor: textColor ?? Colors.black,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
+        padding: const EdgeInsets.all(6),
+        child: SizedBox(
+          height: 70,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: color ?? Colors.grey[300],
+              foregroundColor: textColor ?? Colors.black,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
             ),
-          ),
-          onPressed: onPressed,
-          child: Text(
-            text,
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            onPressed: onPressed,
+            child: Text(
+              text,
+              style: const TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
         ),
       ),
