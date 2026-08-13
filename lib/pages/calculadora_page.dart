@@ -5,10 +5,18 @@ class CalculadoraPage extends StatefulWidget {
   const CalculadoraPage({super.key});
 
   @override
-  State<CalculadoraPage> createState() => _CalculadoraPageState();
+  State<CalculadoraPage> createState() => CalculadoraPageState();
 }
 
-class _CalculadoraPageState extends State<CalculadoraPage> {
+class CalculadoraPageState extends State<CalculadoraPage> {
+  late String displayNumber;
+
+  @override
+  void initState() {
+    super.initState();
+    displayNumber = '0';
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,13 +39,13 @@ class _CalculadoraPageState extends State<CalculadoraPage> {
             height: 200,
             width: double.infinity,
             color: Colors.black12,
-            child: const Align(
+            child: Align(
               alignment: Alignment.bottomRight,
               child: Padding(
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 child: Text(
-                  '0',
-                  style: TextStyle(
+                  displayNumber,
+                  style: const TextStyle(
                     fontSize: 48,
                     fontWeight: FontWeight.bold,
                   ),
